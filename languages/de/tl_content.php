@@ -3,6 +3,8 @@
 $GLOBALS['TL_LANG']['tl_content']['boxLink_legend'] ="Element-Link";
 $GLOBALS['TL_LANG']['tl_content']['elementHref_cursor'] =array("cursor:pointer","Der Cursor wird verändert");
 
+$GLOBALS['TL_LANG']['tl_content']['addLinkContentElement']= "Dem Element ein Link hinzufügen";
+
 $GLOBALS['TL_LANG']['tl_content']['elementHrefTitle'][0]="Link Beschreibungstext";
 $GLOBALS['TL_LANG']['tl_content']['elementHrefTitle'][1]="Link Text Beschreibung";
 
