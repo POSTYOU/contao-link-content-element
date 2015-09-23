@@ -11,9 +11,6 @@ class LinkContentElement extends \Contao\Frontend
         $replaceStyle="";
         $replaceClass="linked_contentElement";
         $replaceURL=null;
-//        if (isset($objElement->row()["replaceClass"]) && !empty($objElement->row()["replaceClass"])) {
-//                $replaceClass = $objElement->row()["replaceClass"];
-//        }
 
         if (isset($objElement->row()["addLinkContentElement"]) && $objElement->row()["addLinkContentElement"]==="1") {
 
@@ -26,12 +23,6 @@ class LinkContentElement extends \Contao\Frontend
             if (isset($objElement->row()["elementHref_cursor"]) && $objElement->row()["elementHref_cursor"]==="1")
                 $replaceStyle="style=\"cursor:pointer\"";
 
-        if (isset($objElement->row()["hrefType"]) && !empty($objElement->row()["hrefType"]) && $objElement->row()["hrefType"]=="elementHrefFile")
-            if (isset($objElement->row()["elementHrefFile"])){
-                $objFile = \FilesModel::findByPk($objElement->row()["elementHrefFile"]);
-                $replaceClass.=" linkedElement_".$objFile->extension;
-                $replaceURL=$objFile->path;
-        }
             $onclick="";
             if(isset($replaceURL))
                 $onclick="onclick=\"window.open('". $replaceURL."','".$replaceTarget."');\"";
