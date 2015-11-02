@@ -5,7 +5,7 @@ usage:
 
 "require": {
 
-    "postyou/link-content-element": "dev-master"
+    "postyou/link-content-element": "~1.0"
 
 },
 
@@ -14,7 +14,7 @@ usage:
     {
 
         "type": "vcs",
-        "url": "https://github.com/garyee/contao-link-content-element"
+        "url": "https://github.com/postyou/contao-link-content-element"
     }
 
 ],

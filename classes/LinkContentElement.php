@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * Content Element Link
+ * Extension for Contao Open Source CMS (contao.org)
+ *
+ * Copyright (c) 2015 POSTYOU
+ *
+ * @package link-content-element
+ * @author  Gerald Meier
+ * @link    http://www.postyou.de
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ */
 namespace postyou;
 
 
