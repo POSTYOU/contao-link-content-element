@@ -34,9 +34,11 @@ class LinkContentElement extends \Contao\Frontend
                 $replaceStyle="style=\"cursor:pointer\"";
 
             $onclick="";
-            if(isset($replaceURL))
+            if(isset($replaceURL)){
+				if (strpos($replaceURL, '{{') !== false)
+                    $replaceURL="/".$replaceURL;
                 $onclick="onclick=\"window.open('". $replaceURL."','".$replaceTarget."');\"";
-
+			}
             $strBuffer = preg_replace("/div/", "div ".$replaceStyle."  title=\"".$objElement->row()["elementHrefTitle"]."\" ".$onclick, $strBuffer, 1);
             $strBuffer = preg_replace("/class=\"/", "class=\"" .$replaceClass." ", $strBuffer, 1);
         }
