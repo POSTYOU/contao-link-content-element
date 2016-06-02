@@ -69,7 +69,18 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['elementHrefLink'] = array
     'eval'                    => array('rgxp'=>'url','filesOnly'=>true, 'decodeEntities'=>true, 'maxlength'=>255, 'fieldType'=>'radio', 'tl_class'=>'clr wizard'),
     'wizard' => array
     (
-        array('tl_content', 'pagePicker')
+        array('tl_content', 'pagePicker'),
+        function($dc){
+         return  '<a href="contao/file.php?do='.Input::get('do').'&amp;table='.$dc->table.'&amp;field='.$dc->field.'&amp;value='.$dc->value.'" title="'.specialchars(str_replace("'", "\\'", $GLOBALS['TL_LANG']['MSC']['filepicker'])).'" onclick="Backend.getScrollOffset();Backend.openModalSelector({\'width\':768,\'title\':\''.specialchars($GLOBALS['TL_LANG']['MOD']['files'][0]).'\',\'url\':this.href,\'id\':\''.$dc->field.'\',\'tag\':\'ctrl_'.$dc->field . ((Input::get('act') == 'editAll') ? '_' . $dc->id : '').'\',\'self\':this});return false">' . Image::getHtml('pickfile.gif', $GLOBALS['TL_LANG']['MSC']['filepicker'], 'style="vertical-align:top;cursor:pointer"') . '</a>';
+        }
     ),
     'sql'                     => "varchar(255) NOT NULL default ''"
 );
+
+class tl_style_content_link extends Backend
+{
+ 
+ 
+ 
+}
+
