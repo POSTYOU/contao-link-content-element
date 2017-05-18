@@ -40,6 +40,8 @@ class LinkContentElement extends \Contao\Frontend
                     $replaceURL="/".$replaceURL;
                 }
                 $onclick="onclick=\"window.open('". $replaceURL."','".$replaceTarget."');\"";
+
+                $strBuffer = preg_replace("/div/", "div ".$replaceStyle."  title=\"".$objElement->row()["elementHrefTitle"]."\" ".$onclick, $strBuffer, 1);
             }
             $strBuffer = preg_replace("/class=\"/", "class=\"" .$replaceClass." ", $strBuffer, 1);
         }
